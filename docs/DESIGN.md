@@ -5,6 +5,8 @@
 
 Status: **Accepted (v0.1 scope)** · License: Apache-2.0 · Last updated: 2026-10-14
 
+> Background and rationale. For requirements see [PRD.md](PRD.md); for binding contracts see [SPEC.md](SPEC.md) (SPEC wins on conflict); for execution see [PLAN.md](PLAN.md).
+
 ---
 
 ## 1. Positioning
@@ -144,7 +146,7 @@ Fallback → CircuitBreaker → Retry → Timeout → call
 
 ## 7. Demo App (`failsight demo`)
 
-A multi-agent "research assistant" built on LangGraph: **planner → researcher (web_search, fetch_page) → writer → reviewer**, with a router loop back from reviewer to researcher.
+A multi-agent "research assistant" built on plain failsight decorators (no LangGraph needed; a LangGraph version ships in `examples/`): **planner → researcher (web_search, fetch_page) → writer → reviewer**, with a router loop back from reviewer to researcher.
 
 - Uses a **mock LLM and mock tools by default** — no API key, deterministic.
 - Chaos toggles (CLI flags + UI panel): inject latency, timeouts, 429s, exceptions per tool.
